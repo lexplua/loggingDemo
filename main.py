@@ -54,31 +54,30 @@ def game_loop():
         computer_score=0,
         player_score=0
     )
-
-    # TODO: TASK 4 add scores logging
-    # LOGGER.debug(f"Scores {...}")
-
-    # TODO: TASK 5 add scores logging
+    player_number = guess_number()
     current_guessed_number = guess_number()
-    # LOGGER.debug(f"Guessed number {...}")
 
-    # TODO: TASK 6 add player number logging
-    player_number = read_player_number()
-    # LOGGER.info(...)
+    while True:
+        # TODO: TASK 4 add scores logging
+        # LOGGER.debug(f"Scores {...}")
 
-    win = compare_input(current_guessed_number, player_number)
-
-    update_print_scores(scores, win)
-    # TODO: TASK 7 add logging for updated(new) scores
-    # ...
-
-    while player_number != 0:
+        # TODO: TASK 5 add scores logging
         guess_number()
-        player_number = read_player_number()
-        win = compare_input(current_guessed_number, player_number)
-        update_print_scores(scores, win)
+        # LOGGER.debug(f"Guessed number {...}")
 
-    # Game is over
+        # TODO: TASK 6 add player number logging
+        player_number = read_player_number()
+        # LOGGER.info(...)
+        if player_number == 0:
+            break
+
+        win = compare_input(current_guessed_number, player_number)
+
+        update_print_scores(scores, win)
+        # TODO: TASK 7 add logging for updated(new) scores
+        # ...
+
+    # The game is over
     # TODO: TASK 8 Add Final results logging
     # ...
 
